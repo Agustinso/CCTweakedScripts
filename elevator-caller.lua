@@ -45,7 +45,7 @@ function caller:run()
         end
     end
     if self.button then
-        rednet.sender(self.controller, THIS_FLOOR, PROTOCOL)
+        rednet.send(self.controller, THIS_FLOOR, PROTOCOL)
     end
 end
 
