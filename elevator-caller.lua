@@ -45,6 +45,7 @@ function caller:run()
         end
     end
     if self.button then
+        print("Calling elevator with", THIS_FLOOR)
         rednet.send(self.controller, THIS_FLOOR, PROTOCOL)
     end
 end
