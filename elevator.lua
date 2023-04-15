@@ -73,11 +73,9 @@ function program:update()
         self.first_draw = false
         return
     end
-    rednet.send(self.serverID, "where", PROTOCOL)
+    --rednet.send(self.serverID, "where", PROTOCOL)
     local event, side, x, y = os.pullEvent()
-    if event ~= "modem_message" then
-        print(event)
-    end
+    print(event)
     if event == "monitor_touch" then
         print(x,y)
         if (y <= MAX_FLOOR) then
