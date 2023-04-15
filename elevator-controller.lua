@@ -123,7 +123,8 @@ function controller:update()
 		end
 		if self.movingFloor == self.targetFloor then
 			self.moving = false
-			self.targetFloor = self.currentFloor
+			self.targetFloor  = self.movingFloor
+			self.currentFloor = self.movingFloor
 		--[[
 		else
 			if (self.movingFloor > self.targetFloor) and self.lowering then
