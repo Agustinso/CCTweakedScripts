@@ -56,6 +56,8 @@ function program:setup()
     self.selected = -1
     self.currentFloor = -1
 
+    tern.clear()
+    term.setCursorPos(1,1)
     return true
 end
 
