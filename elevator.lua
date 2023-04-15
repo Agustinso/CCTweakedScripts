@@ -17,11 +17,10 @@ CAT_COLOR = colors.orange
 CAT_BG    = colors.brown
 
 CAT = {}
-CAT[1] = [[       ]]
-CAT[2] = [[    /\ ]]
-CAT[3] = [[\  ( ')]]
-CAT[4] = [[/ /  ) ]]
-CAT[5] = [[\(__)| ]]
+CAT[1] = [[    /\ ]]
+CAT[2] = [[\  ( ')]]
+CAT[3] = [[/ /  ) ]]
+CAT[4] = [[\(__)| ]]
 
 local program = {}
 
@@ -94,7 +93,7 @@ end
 
 
 function program:draw()
-    for i = 0, MAX_FLOOR-1, 1 do
+    for i = 0, MAX_FLOOR, 1 do
         local color = BG1_COLOR
         if (i % 2 == 0) then
             color = BG2_COLOR
