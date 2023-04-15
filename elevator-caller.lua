@@ -22,14 +22,14 @@ function caller:setup()
     end
     
     self.button = redstone.getInput(BTN_SIDE)
-    rednet.sender(self.controller, "where", PROTOCOL)
+    rednet.send(self.controller, "where", PROTOCOL)
     return true
 end
 
 function caller:run()
     local eventData = {os.pullEvent()}
     local event = eventData[1]
-    
+
     if event == "redstone" then
         self.button = redstone.getInput(BTN_SIDE)
     elseif event == "rednet_message" then
