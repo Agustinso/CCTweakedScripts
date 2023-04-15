@@ -123,6 +123,7 @@ function controller:update()
 		end
 		if self.movingFloor == self.targetFloor then
 			self.moving = false
+		--[[
 		else
 			if (self.movingFloor > self.targetFloor) and self.lowering then
 				printError(" LOWER FLOOR:", self.movingFloor, self.targetFloor)
@@ -131,6 +132,7 @@ function controller:update()
 				printError(" GREATER FLOOR:", self.movingFloor, self.targetFloor)
 				self.moving = false
 			end
+		--]]
 		end
 	end
 end

@@ -34,8 +34,6 @@ function program:setup()
         self.monitor.clear()
         self.monitor.setCursorPos(1,1)
         self.computer = term.current()
-        self.width, self.height = monitor.getSize()
-        self.buttonHeight = math.floor(self.height / MAX_FLOOR)
         self.first_draw = true
     else
         printError("Cannot find monitor")
@@ -75,9 +73,9 @@ function program:update()
         self.first_draw = false
         return
     end
-    --rednet.send(self.serverID, "where", PROTOCOL)
+    rednet.send(self.serverID, "where", PROTOCOL)
     local event, side, x, y = os.pullEvent()
-    print(event)
+    --print(event)
     if event == "monitor_touch" then
         print(x,y)
         if (y <= MAX_FLOOR) then
